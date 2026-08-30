@@ -68,9 +68,9 @@ app.get('/display/api',async(req,res) => {
 //fetch
 app.get('/fetch/api/:id',async(req,res) => {
     try{
-        const user = await UserTb.findById(req.params.id);
+        const data = await UserTb.findById(req.params.id);
 
-        if(!user){
+        if(!data){
             return res.status(404).json({flag:0,msg:"No Record Found!"})
         }
 
